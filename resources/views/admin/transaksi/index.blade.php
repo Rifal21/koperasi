@@ -10,7 +10,7 @@
         </div>
 
         <div class="card">
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 <table id="transactionsTable" class="table table-bordered table-striped w-100">
                     <thead>
                         <tr>
