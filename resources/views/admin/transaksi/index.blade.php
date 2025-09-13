@@ -38,7 +38,7 @@
                     <h5 class="modal-title">Tambah Transaksi</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body table-responsive">
 
                     {{-- Pilih Client --}}
                     <div class="row g-3 mb-3">
@@ -284,6 +284,7 @@
                     $(this).toggle(name.includes(query));
                 });
             });
+            
 
             // Validasi submit (minimal qty > 0)
             $('#itemModal form').on('submit', function() {

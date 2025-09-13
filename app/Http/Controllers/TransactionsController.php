@@ -266,6 +266,9 @@ class TransactionsController extends Controller
             ->addColumn('invoice', function ($row) {
                 return $row->invoice_number;
             })
+            ->filterColumn('invoice', function ($query, $keyword) {
+                $query->where('transactions.invoice_number', 'like', "%{$keyword}%");
+            })
             ->addColumn('client', function ($row) {
                 return $row->client ? $row->client->name : '-';
             })
