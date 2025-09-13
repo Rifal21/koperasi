@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TransactionsController;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AuthenticationController::class, 'index'])->name('login');
@@ -23,4 +24,9 @@ Route::middleware('auth')->group(function () {
     Route::get('clients-data', [ClientController::class, 'getData'])->name('clients.data');
     Route::resource('transactions', TransactionsController::class);
     Route::get('transactions-data', [TransactionsController::class, 'getData'])->name('transactions.data');
+});
+
+Route::get('/test-log', function () {
+    Log::info('Tes log dari route /test-log');
+    return 'cek storage/logs/laravel.log';
 });
